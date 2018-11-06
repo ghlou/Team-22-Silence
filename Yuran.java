@@ -3,5 +3,6 @@ public class Yuran {
 {
 		System.out.println("Hello, this is yuran!");
 		System.out.println("Test");
+		System.out.println("This is a test again.");
 	}
 }
