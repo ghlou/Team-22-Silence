@@ -27,8 +27,13 @@ switch (weather)
   default: tours[1]="Sorry, I cannot understand.";
 }
 
+/*for (int nn=0;nn<=12;nn++)
+{System.out.println(tours[nn]);*/
+          System.out.print(tours[0]);
 for (int nn=0;nn<=12;nn++)
-{System.out.println(tours[nn]);
+{
+  if (!tours[nn].equals("")&&nn!=0)  
+    System.out.print(", "+tours[nn]);
 
 
 }
