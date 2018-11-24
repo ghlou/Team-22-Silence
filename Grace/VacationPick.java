@@ -67,8 +67,9 @@ Prompt user for another vacation suggestion with loop (Wendy)
 
     default: System.out.println("Your input is not one of the vacation options.");
 
+    }
+
     System.out.println();
 
-    }
   }
 }
