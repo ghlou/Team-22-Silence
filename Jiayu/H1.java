@@ -1,4 +1,3 @@
-
 import java.util.Arrays;
 public class H1 {
  public static void main (String[] args) {
@@ -7,12 +6,9 @@ public class H1 {
     //weather
     String [] tw=new String[13];
     Arrays.fill(tw,"");
-    System.out.printf("%nWhat kind of weather do you prefer? Enter \"warm\", \"cool\", \"snowy\", or \"nevermind\"%n");
+    System.out.printf("%nWhat kind of weather do you prefer? Enter \"warm\", \"cool\", or \"nevermind\"%n");
     String weather="";
     tw=weather(weather,tw);
-    
-    
-    
     
     //location
     String [] tl=new String[13];
@@ -21,8 +17,6 @@ public class H1 {
     System.out.printf("%nHow far do you prefer? Enter \"domestic \", \"international\", or \"nevermind\"%n");
     String location="";
     tl=location(tl,location);
-    
-    
     
 //activities
     
@@ -39,7 +33,6 @@ public class H1 {
     int a3=TextIO.getlnInt();
     String []ascore=activities(a1,a2,a3);
     
-    
     //suggestions for cities
     String []tours=new String[13];
     Arrays.fill(tours,"");
@@ -53,7 +46,7 @@ public class H1 {
         }
       }
     }
-    if (count!=0&&count!=1)
+    if (count != 0 && count!= 1)
     {System.out.printf("%nWe have some suggestions to you:%n");
       for(int n4=0;n4<13;n4++)
       {if (tours[n4]!="")
@@ -70,14 +63,12 @@ public class H1 {
     else {System.out.printf("%nSorry, you don't have any choice.");}
     
   }
-  
-  
 ////////////////////////////////////////////////
 //(weather)
   public static String []weather(String weather, String[]tours)
-  {weather=TextIO.getlnString();
-    String nyc="New York City";
-    String h="Hawaii";
+  {weather = TextIO.getlnString();
+    String nyc = "New York City";
+    String h = "Hawaii";
     String r = "Rome";
     String c = "Cancun";
     String o = "Orlando";
@@ -101,14 +92,12 @@ public class H1 {
     }
     return tours;
   }
-  
-  
-  
+
 //(location) method
   public static String[]location(String []tl,String location){
-    location=TextIO.getlnString();
-    String nyc="New York City";
-    String h="Hawaii";
+    location = TextIO.getlnString();
+    String nyc = "New York City";
+    String h = "Hawaii";
     String r = "Rome";
     String c = "Cancun";
     String o = "Orlando";
@@ -128,30 +117,27 @@ public class H1 {
     }
     return tl;
   }
-  
-  
-  
 //(activities)activities array score 
   public static String []activities(int a1,int a2,int a3)
   {
     
 //(activities)score for each city's activities: beach, museums and historical sites, city life, nature, amusement park
-    double []anyc={0,7,10,3,7};
-    double []ah={10,3,3,7,7};
-    double []ar={7,10,5,5,3};
-    double []ac={10,0,0,10,7};
-    double []ao={0,7,5,5,10};
-    double []al={0,10,10,7,5};
-    double []am={10,7,5,7,3};
-    double []alv={5,7,7,0,3};
-    double []asf={10,10,7,5,5};
-    double []ala={10,10,10,3,7};
-    double []amb={10,0,0,10,10};
-    double []apr={10,3,0,10,7};
-    double []ap={0,10,10,7,0};
+    double []anyc = {0,7,10,3,7};
+    double []ah = {10,3,3,7,7};
+    double []ar = {7,10,5,5,3};
+    double []ac = {10,0,0,10,7};
+    double []ao = {0,7,5,5,10};
+    double []al = {0,10,10,7,5};
+    double []am = {10,7,5,7,3};
+    double []alv = {5,7,7,0,3};
+    double []asf = {10,10,7,5,5};
+    double []ala = {10,10,10,3,7};
+    double []amb = {10,0,0,10,10};
+    double []apr = {10,3,0,10,7};
+    double []ap = {0,10,10,7,0};
     
-    String nyc="New York City";
-    String h="Hawaii";
+    String nyc = "New York City";
+    String h = "Hawaii";
     String r = "Rome";
     String c = "Cancun";
     String o = "Orlando";
@@ -164,40 +150,36 @@ public class H1 {
     String pr = "Puerto Rico";
     String p = "Paris";
     
+    double snyc = ascore(anyc,a1,a2,a3);
+    double sh = ascore(ah,a1,a2,a3);
+    double sr = ascore(ar,a1,a2,a3);
+    double sc = ascore(ac,a1,a2,a3);
+    double so = ascore(ao,a1,a2,a3);
+    double sl = ascore(al,a1,a2,a3);
+    double sm = ascore(am,a1,a2,a3);
+    double slv = ascore(alv,a1,a2,a3);
+    double ssf = ascore(asf,a1,a2,a3);
+    double sla = ascore(ala,a1,a2,a3);
+    double smb = ascore(amb,a1,a2,a3);
+    double spr = ascore(apr,a1,a2,a3);
+    double sp = ascore(ap,a1,a2,a3);
     
-    
-    double snyc=ascore(anyc,a1,a2,a3);
-    double sh=ascore(ah,a1,a2,a3);
-    double sr=ascore(ar,a1,a2,a3);
-    double sc=ascore(ac,a1,a2,a3);
-    double so=ascore(ao,a1,a2,a3);
-    double sl=ascore(al,a1,a2,a3);
-    double sm=ascore(am,a1,a2,a3);
-    double slv=ascore(alv,a1,a2,a3);
-    double ssf=ascore(asf,a1,a2,a3);
-    double sla=ascore(ala,a1,a2,a3);
-    double smb=ascore(amb,a1,a2,a3);
-    double spr=ascore(apr,a1,a2,a3);
-    double sp=ascore(ap,a1,a2,a3);
-    
-    String []afit=new String[13];
-    afit=afit(afit,snyc,0,nyc);
-    afit=afit(afit,sh,1,h);
-    afit=afit(afit,sr,2,r);
-    afit=afit(afit,sc,3,c);
-    afit=afit(afit,so,4,o);
-    afit=afit(afit,sl,5,l);
-    afit=afit(afit,sm,6,m);
-    afit=afit(afit,slv,7,lv);
-    afit=afit(afit,ssf,8,sf);
-    afit=afit(afit,sla,9,la);
-    afit=afit(afit,smb,10,mb);
-    afit=afit(afit,spr,11,pr);
-    afit=afit(afit,sp,12,p);
-    
+    String []afit = new String[13];
+    afit = afit(afit,snyc,0,nyc);
+    afit = afit(afit,sh,1,h);
+    afit = afit(afit,sr,2,r);
+    afit = afit(afit,sc,3,c);
+    afit = afit(afit,so,4,o);
+    afit = afit(afit,sl,5,l);
+    afit = afit(afit,sm,6,m);
+    afit = afit(afit,slv,7,lv);
+    afit = afit(afit,ssf,8,sf);
+    afit = afit(afit,sla,9,la);
+    afit = afit(afit,smb,10,mb);
+    afit = afit(afit,spr,11,pr);
+    afit = afit(afit,sp,12,p);
     
     return afit;
-    
   }
   
   // (activities)calculate activity score
@@ -214,20 +196,4 @@ public class H1 {
     else {afit[num]="";}
     return afit;
   }
-  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
