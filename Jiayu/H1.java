@@ -4,19 +4,19 @@ public class H1 {
     
     System.out.printf("Hi, Brandeis Students! Let's plan for your vocation.%n");
     //weather
-    String [] tw=new String[13];
+    String [] tw = new String[13];
     Arrays.fill(tw,"");
     System.out.printf("%nWhat kind of weather do you prefer? Enter \"warm\", \"cool\", or \"nevermind\"%n");
-    String weather="";
-    tw=weather(weather,tw);
+    String weather = "";
+    tw = weather(weather,tw);
     
     //location
-    String [] tl=new String[13];
-    Arrays.fill(tl,"");
+    String [] tl = new String[13];
+    Arrays.filL(tl,"");
     
     System.out.printf("%nHow far do you prefer? Enter \"domestic \", \"international\", or \"nevermind\"%n");
-    String location="";
-    tl=location(tl,location);
+    String location = "";
+    tl = location(tl,location);
     
 //activities
     
@@ -24,39 +24,39 @@ public class H1 {
     System.out.printf("%nEnter 0 for \"beach\"%nEnter 1 for \"museums and historical sites\"%nEnter 2 for \"city life\"%nEnter 3 for \"nature\"%nEnter 4 for \"amusement park\"%n");
     
     System.out.printf("%nWhat's your first most concerned element%n");
-    int a1=TextIO.getlnInt();
+    int a1 = TextIO.getlnInt();
     
     System.out.printf("%nWhat's your second most concerned element%n");
-    int a2=TextIO.getlnInt();
+    int a2 = TextIO.getlnInt();
     
     System.out.printf("%nWhat's your third most concerned element%n");
-    int a3=TextIO.getlnInt();
-    String []ascore=activities(a1,a2,a3);
+    int a3 = TextIO.getlnInt();
+    String []ascore = activities(a1,a2,a3);
     
     //suggestions for cities
-    String []tours=new String[13];
+    String []tours = new String[13];
     Arrays.fill(tours,"");
-    int count=0;
-    for(int n1=0;n1<13;n1++){
-      for (int n2=0;n2<13;n2++){
-        for (int n3=0;n3<13;n3++){
-          {if (tl[n1]==tw[n2]&&tl[n1]==ascore[n3]&&tl[n1]!="")
-            {tours[n1]=tl[n1];count++;};
+    int count = 0;
+    for(int n1 = 0; n1 < 13; n1++){
+      for (int n2 = 0; n2 < 13; n2++){
+        for (int n3 = 0; n3 < 13; n3++){
+          {if (tl[n1] == tw[n2] && tl[n1] == ascore[n3] && tl[n1] != "")
+            {tours[n1] = tl[n1]; count++;};
           }
         }
       }
     }
     if (count != 0 && count!= 1)
     {System.out.printf("%nWe have some suggestions to you:%n");
-      for(int n4=0;n4<13;n4++)
-      {if (tours[n4]!="")
-        {System.out.print(tours[n4]+"  ");}
+      for(int n4 = 0; n4 < 13; n4++)
+      {if (tours[n4] != "")
+        {System.out.print(tours[n4] + "  ");}
       }}
     
-    else if (count==1)
+    else if (count == 1)
     {System.out.printf("%nWe have a suggestion to you:%n");
-      for(int n4=0;n4<13;n4++)
-      {if (tours[n4]!="")
+      for(int n4 = 0; n4 < 13; n4++)
+      {if (tours[n4] != "")
         {System.out.print(tours[n4]+"  ");}
       }}
     
