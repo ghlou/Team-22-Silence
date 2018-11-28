@@ -1,13 +1,15 @@
-
 import java.util.Arrays;
-public class H1 {
- public static void main (String[] args) {
+
+public class SilenceProject{
+  public static void main (String[] args) {
     
-    System.out.printf("Hi, Brandeis Students! Let's plan for your vocation.%n");
-    //weather
+System.out.printf("Hi, Brandeis Students! Let's plan for your vocation.%n");
+ 
+
+//weather
     String [] tw=new String[13];
     Arrays.fill(tw,"");
-    System.out.printf("%nWhat kind of weather do you prefer? Enter \"warm\", \"cool\", \"snowy\", or \"nevermind\"%n");
+    System.out.printf("%nWhat kind of weather do you prefer? Enter \"warm\", \"cool\", \"hot\", or \"nevermind\"%n");
     String weather="";
     tw=weather(weather,tw);
     
@@ -53,6 +55,8 @@ public class H1 {
         }
       }
     }
+    
+    
     if (count!=0&&count!=1)
     {System.out.printf("%nWe have some suggestions to you:%n");
       for(int n4=0;n4<13;n4++)
@@ -68,10 +72,13 @@ public class H1 {
       }}
     
     else {System.out.printf("%nSorry, you don't have any choice.");}
-    
+
+        vacationsuggestion();
+
+ 
+
+
   }
-  
-  
 ////////////////////////////////////////////////
 //(weather)
   public static String []weather(String weather, String[]tours)
@@ -124,7 +131,7 @@ public class H1 {
     {case "domestic" :tl[0]=nyc;tl[1]=h;tl[2]=o;tl[3]=m;tl[4]=lv;tl[5]=sf;tl[6]=la;tl[7]=mb;break;
       case "international": tl[0]=r;tl[1]=c; tl[2]=l;tl[3]=pr;tl[4]=p;break;
       case "nevermind":tl[0]=nyc;tl[1]=h;tl[2]=o;tl[3]=m;tl[4]=lv;tl[5]=sf;tl[6]=la;tl[7]=mb;tl[8]=r;tl[9]=c; tl[10]=l;tl[11]=pr;tl[12]=p;break;
-      default: System.out.println("Sorry, I cannot understand.");location(tl,location);
+      default: System.out.println("Sorry, I cannot understand.Please enter again.");location(tl,location);
     }
     return tl;
   }
@@ -215,19 +222,79 @@ public class H1 {
     return afit;
   }
   
+  //pick a vacation spot for more information
+   public static void vacationsuggestion()
+  {
+     System.out.println();  
+  System.out.printf("%nYou may enter your favorite vacation spot suggestion to learn more about it. Enter a city's name or enter \"leave\" to end the program.%n");
+  String favoriteVacation = TextIO.getlnString();
+  System.out.println();
+
+  switch(favoriteVacation) {
+    case "leave":
+    System.out.println("Thanks for using our program.");
+    break;
+    
+    case "New York City":
+    System.out.printf("You’ve chosen NYC! %nNew York City is a city of lights. Some attractive places to visit are Times Square, the Met, and its Broadway shows, which people from all over the world come and watch. If you come during the New Year you can watch the famous ball drop at Times Square. There are a lot of great food places along the way. And nightlife is abundant in NYC, where clubs and parties happen almost every week. There’s always something to visit in the day and something to do at night. ");
+    break;
+
+    case "Hawaii":
+    System.out.printf("You’ve chosen Hawaii! %nHawaii is known for its beautiful sandy beaches, its natural volcanoes, and its amazing wildlife. If you want adventure on your vacation, Hawaii can give you opportunities to go scuba diving in underwater caves or paddling along the beach. If you are more into relaxing, Hawaii is a great place to just walk around and enjoy the scenery and even get a tan along the way!");
+    break;
+
+    case "Rome":
+    System.out.printf("You’ve chosen Rome! %nRome is an extremely historical site. It has the Colosseum, St. Peter’s Basilica, the Pantheon, the Roman Forum, and many other famous sites. It also has tiny shops along the sides of the streets where you can find great Italian food. Overall, if you’re interested in history, Rome is a great place to explore its architecture and museums to better understand its past. ");
+    break;
+
+    case "Cancun":
+    System.out.printf("You’ve chosen Cancun! %nCancun is the heart of rest. It is where you can set a towel down on the beach and lie on your stomach to get a tan. The weather is perfect for sitting outside under the sun and enjoy yourself and your family or friends. If you get bored of lying on the beach, Cancun has some easy adventure activities like swimming at the beach or snorkeling in the reefs.");
+    break;
+
+    case "Orlando":
+    System.out.printf("You’ve chosen Orlando! %nOrlando is the home of Disneyland! You must be excited to see the disney characters come to life, the themed rides, and the carnivals at Disneyland. There are many amusement rides to go on, from a gentle Dumbo ride to Space Mountain. There are also a lot of performances in Disneyland, including parades and theater shows. There’s a lot of entertainment everywhere you go in Orlando! ");
+    break;
+
+    case "London":
+    System.out.printf("You’ve chosen London! %nLondon is perfect for tourists who want to see famous buildings like the Big Ben, the Buckingham palace, and the London Eye. At the palace you can watch the soldiers guard the building and switch off on each watch. You can walk the cobblestone streets and almost feel like you’re back in the 1800s! ");
+    break;
+
+    case "Miami":
+    System.out.printf(" You’ve chosen Miami! %nMiami is full of yellow sandy beaches and interesting wildlife. There are crocodiles, dolphins, and other exotic birds! Miami is also a great hub for shopping centers with plenty of different stores and stands. Lastly, Miami is famous for its great nightlife! Feel free to go out clubbing and drink with friends after a nice relaxing day on the beach! ");
+    break;
+
+    case "Las Vegas":
+    System.out.printf("You’ve chosen Las Vegas! %nLas Vegas has plenty of casinos to gamble at and have fun with friends. Las Vegas also has kart racing as a famous activity for vacationers. If you like indoor excitement, playing at casinos are going to be a lot of fun in Vegas! ");
+    break;
+
+    case "San Fransisco":
+    System.out.printf("You’ve chosen San Francisco! %nThis place is great for its sunny summers and its historical sites. Drive across the Golden Gate Bridge and view Alcatraz Island by ferry. Check out Fisherman’s Wharf and shop at the small stalls and restaurants, and lay on the beach and get a tan while palm trees sway nearby. San Francisco is a paradise with lots of backstory to it!");
+    break;
+
+    case "Los Angeles":
+    System.out.printf("You’ve chosen Los Angeles! %nLos Angeles is the heart of movies and Hollywood. Famous actors and movies live and have been filmed here. Feel free to walk around and check out the different filming sites and you might even bump into a celebrity there. There are also a lot of cool restaurants with innovative dishes to try out!");
+    break;
+
+    case "Myrtle Beach":
+    System.out.printf("You’ve chosen Myrtle Beach! %nMyrtle Beach is a relaxing beach. People are welcome to lay down on a towel and get a tan while the sun slowly moves in the sky. You can also play arcades if you get bored of lying under the sun. With the arcade comes the theme park with rollercoasters and stalls to win prizes at Myrtle Beach. Overall, this beach is a great place to relax and have fun! ");
+    break;
+
+    case "Puerto Rico":
+    System.out.printf("You’ve chosen Puerto Rico! %nPuerto Rico is a tropical paradise that provides indoor and outdoor excitement. In Puerto Rico you can go scuba diving and coral reef snorkeling or tour a national park. You can also go shopping and visit some historical sites. Get ready to see some beautiful things in nature at Puerto Rico! ");
+    break;
+
+    case "Paris":
+    System.out.printf("You’ve chosen Paris! %nParis is a city of romance and fashion. Feel free to walk along the streets and see vendors that sell high quality and chic products such as purses and clothes. Along with clothes, Paris also emphasizes on art. It’s beautiful buildings such as the Eiffel Tower and its painting from the past are sights to see. The culture of Paris is also something to experience and appreciate. Overall, a very sophisticated and exciting place to see! ");
+    break;
+
+    default: System.out.printf("Your input is not one of the vacation options. Please enter another city's name.");vacationsuggestion();
+
+    }
+
+    System.out.println();
+
+  }
+
+
+  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
