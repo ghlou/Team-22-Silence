@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 public class H1 {
  public static void main (String[] args) {
     
@@ -6,13 +7,14 @@ public class H1 {
     //weather
     String [] tw = new String[13];
     Arrays.fill(tw,"");
-    System.out.printf("%nWhat kind of weather do you prefer? Enter \"warm\", \"cool\", or \"nevermind\"%n");
+    System.out.printf("%nWhat kind of weather do you prefer? Enter \"hot\",\"warm\", \"cool\", or \"nevermind\"%n");
+    System.out.println("Feeling lucky? Press Enter");
     String weather = "";
     tw = weather(weather,tw);
     
     //location
     String [] tl = new String[13];
-    Arrays.filL(tl,"");
+    Arrays.fill(tl,"");
     
     System.out.printf("%nHow far do you prefer? Enter \"domestic \", \"international\", or \"nevermind\"%n");
     String location = "";
@@ -85,8 +87,15 @@ public class H1 {
       case "hot": tours[0]=h;tours[1]=c; tours[2]=o;tours[3]=m;tours[4]=pr;break;
       case "cool": tours[0]=r;tours[1]=l; tours[2]=p;break;
       case "nevermind": tours[0]=nyc;tours[1]=lv; tours[2]=sf;tours[3]=la;tours[4]=mb;
-      tours[0]=h;tours[1]=c; tours[2]=o;tours[3]=m;tours[4]=pr;
-      tours[0]=r;tours[1]=l; tours[2]=p;break;
+                        tours[5]=h;tours[6]=c; tours[7]=o;tours[8]=m;tours[9]=pr;
+                        tours[10]=r;tours[11]=l; tours[12]=p;break;
+      case "":tours[0]=nyc;tours[1]=lv; tours[2]=sf;tours[3]=la;tours[4]=mb;
+              tours[5]=h;tours[6]=c; tours[7]=o;tours[8]=m;tours[9]=pr;
+              tours[10]=r;tours[11]=l; tours[12]=p;
+              Random x = new Random();
+              int a = x.nextInt(12);
+              System.out.println(tours[a]); 
+              System.exit(0);break;
       default: System.out.println("Sorry, I cannot understand. Please enter again.");weather(weather,tours);
       
     }
