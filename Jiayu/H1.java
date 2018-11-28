@@ -212,14 +212,13 @@ public class H1 {
     return afit;
   }
 
-}  
   //pick a vacation spot for more information
    public static void vacationsuggestion()
   {
      System.out.println();  
-  System.out.printf("%nYou may enter your favorite vacation spot suggestion to learn more about it. Enter a city's name or enter \"leave\" to end the program.%n");
-  String favoriteVacation = TextIO.getlnString();
-  System.out.println();
+     System.out.printf("%nYou may enter your favorite vacation spot suggestion to learn more about it. Enter a city's name or enter \"leave\" to end the program.%n");
+    String favoriteVacation = TextIO.getlnString();
+    System.out.println();
 
   switch(favoriteVacation) {
     case "leave":
@@ -285,7 +284,4 @@ public class H1 {
     System.out.println();
 
   }
-
-
-  
 }
