@@ -3,7 +3,7 @@ import java.util.Random;
 public class H1 {
   public static void main (String[] args) {
 
-    System.out.printf("Hi, Brandeis Students! Let's plan for your vocation.%n");
+    System.out.printf("Hi, Brandeis Students! Let's plan for your vacation.%n");
     //weather
     String [] tw = new String[13];
     Arrays.fill(tw,"");
