@@ -112,6 +112,7 @@ return tours;
 //(location) method
 public static String[]location(String []tl,String location){
 	location = TextIO.getlnString();
+	location = location.toLowerCase();
 	String nyc = "New York City";
 	String h = "Hawaii";
 	String r = "Rome";
