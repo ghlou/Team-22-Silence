@@ -75,6 +75,7 @@ vacationsuggestion();
 //(weather)
 public static String []weather(String weather, String[]tours)
 {weather = TextIO.getlnString();
+	weather = weather.toLowerCase();
 	String nyc = "New York City";
 	String h = "Hawaii";
 	String r = "Rome";
