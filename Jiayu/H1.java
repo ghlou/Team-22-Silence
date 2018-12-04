@@ -2,8 +2,10 @@ import java.util.Arrays;
 import java.util.Random;
 public class H1 {
 	public static void main (String[] args) {
+		//javac -cp ".:SimpleTTS.jar" H1.java
+		//java -cp ".:SimpleTTS.jar" SpeakDemo
+		SimpleTTS.say("Hi, Brandeis Students! Let's plan for your vacation.");
 
-		System.out.printf("Hi, Brandeis Students! Let's plan for your vacation.%n");
 		//weather
 		String [] tw = new String[13];
 		Arrays.fill(tw,"");
@@ -27,13 +29,28 @@ public class H1 {
 
 		System.out.printf("%nWhat's your first most concerned element%n");
 		int a1 = TextIO.getlnInt();
+		while (a1 > 4 || a1 < 0) {
+			System.out.println("Please enter a number between 0-4.");
+			a1 = TextIO.getlnInt();
+		}
 
 		System.out.printf("%nWhat's your second most concerned element%n");
 		int a2 = TextIO.getlnInt();
+		while (a2 > 4 || a2 < 0) {
+			System.out.println("Please enter a number between 0-4.");
+			a2 = TextIO.getlnInt();
+		}
 
 		System.out.printf("%nWhat's your third most concerned element%n");
 		int a3 = TextIO.getlnInt();
-		String []ascore = activities(a1,a2,a3);
+		while (a3 > 4 || a3 < 0) {
+			System.out.println("Please enter a number between 0-4.");
+			a3 = TextIO.getlnInt();
+			String []ascore = activities(a1,a2,a3);
+		}
+	}
+
+
 
 		//suggestions for cities
 		String []tours = new String[13];
