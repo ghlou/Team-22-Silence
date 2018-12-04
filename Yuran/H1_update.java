@@ -7,8 +7,9 @@ public class H1_update {
 
 		//javac -cp ".:SimpleTTS.jar" H1_update.java
 		//java -cp ".:SimpleTTS.jar" H1_
-		SimpleTTS.say("Hi, Brandeis Students! Let's plan for your vacation.");
+		//SimpleTTS.say("Hi, Brandeis Students! Let's plan for your vacation.");
 		//weather
+		System.out.println("Hi, Brandeis Students! Let's plan for your vacation.");
 		String [] tw = new String[13];
 		Arrays.fill(tw,"");
 		System.out.printf("%nWhat kind of weather do you like? %n");
