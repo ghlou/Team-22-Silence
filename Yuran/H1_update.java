@@ -2,10 +2,12 @@ import java.util.Arrays;
 import java.util.Random;
 public class H1_update {
 	public static void main (String[] args) {
-		
+
 		String []cityname = {"New York City","Hawaii","Rome","Cancun","Orlando","London","Miami","Las Vegas","San Francisco","Los Angeles","Myrtle Beach","Puerto Rico","Paris"};
-		
-		System.out.printf("Hi, Brandeis Students! Let's plan for your vacation.%n");
+
+		//javac -cp ".:SimpleTTS.jar" H1_update.java
+		//java -cp ".:SimpleTTS.jar" H1_
+		SimpleTTS.say("Hi, Brandeis Students! Let's plan for your vacation.");
 		//weather
 		String [] tw = new String[13];
 		Arrays.fill(tw,"");
@@ -29,12 +31,24 @@ public class H1_update {
 
 		System.out.printf("%nWhat's your first most concerned element%n");
 		int a1 = TextIO.getlnInt();
+		while (a1 > 4 || a1 < 0) {
+			System.out.println("Please enter a number between 0-4.");
+			a1 = TextIO.getlnInt();
+		}
 
 		System.out.printf("%nWhat's your second most concerned element%n");
 		int a2 = TextIO.getlnInt();
+		while (a2 > 4 || a2 < 0) {
+			System.out.println("Please enter a number between 0-4.");
+			a2 = TextIO.getlnInt();
+		}
 
 		System.out.printf("%nWhat's your third most concerned element%n");
 		int a3 = TextIO.getlnInt();
+		while (a3 > 4 || a3 < 0) {
+			System.out.println("Please enter a number between 0-4.");
+			a3 = TextIO.getlnInt();
+		}
 		String []ascore = activities(a1,a2,a3,cityname);
 
 		//suggestions for cities
@@ -73,23 +87,23 @@ vacationsuggestion();
 ////////////////////////////////////////////////
 //(weather)
 public static String [] weather(String[] cityname)
-{ 
+{
 	String [] tours = new String[13];
 	String weather = TextIO.getlnString();
 	weather = weather.toLowerCase();
-	
+
 	switch (weather)
 	{case "w" :tours[0]=cityname[0];tours[1]=cityname[7]; tours[2]=cityname[8];tours[3]=cityname[9];tours[4]=cityname[10];break;
 	case "h": tours[0]=cityname[1];tours[1]=cityname[3]; tours[2]=cityname[4];tours[3]=cityname[6];tours[4]=cityname[11];break;
 	case "c": tours[0]=cityname[2];tours[1]=cityname[5]; tours[2]=cityname[12];break;
 	case "n": tours = cityname;break;
 	case "": tours = cityname;
-	
+
 	Random x = new Random();
 	int a = x.nextInt(12);
 	System.out.println(tours[a]);
 	vacationsuggestion();break;
-	
+
 	default: System.out.println("Sorry, I cannot understand. Please enter again.");weather(cityname);
 
 }
@@ -100,7 +114,7 @@ return tours;
 public static String [] location(String[] cityname, String[] tl){
 	String location = TextIO.getlnString();
 	location = location.toLowerCase();
-	
+
 	switch (location)
 	{case "d" :tl[0]=cityname[0];tl[1]=cityname[1];tl[2]=cityname[4];tl[3]=cityname[6];tl[4]=cityname[7];tl[5]=cityname[8];tl[6]=cityname[9];tl[7]=cityname[10];break;
 	case "i": tl[0]=cityname[2];tl[1]=cityname[3]; tl[2]=cityname[5];tl[3]=cityname[11];tl[4]=cityname[12];break;
@@ -237,7 +251,7 @@ public static void vacationsuggestion()
 		System.out.printf("You’ve chosen Paris! %nParis is a city of romance and fashion. Feel free to walk along the streets and see vendors that sell high quality and chic products such as purses and clothes. Along with clothes, Paris also emphasizes on art. It’s beautiful buildings such as the Eiffel Tower and its painting from the past are sights to see. The culture of Paris is also something to experience and appreciate. Overall, a very sophisticated and exciting place to see! ");
 		break;
 
-		default: System.out.println("Thank you for using our program."); 
+		default: System.out.println("Thank you for using our program.");
 
 	}
 	System.out.println();
