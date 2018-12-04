@@ -1,24 +1,26 @@
 import java.util.Arrays;
 import java.util.Random;
-public class H1 {
+public class H1_update {
 	public static void main (String[] args) {
-
+		
+		String []cityname = {"New York City","Hawaii","Rome","Cancun","Orlando","London","Miami","Las Vegas","San Francisco","Los Angeles","Myrtle Beach","Puerto Rico","Paris"};
+		
 		System.out.printf("Hi, Brandeis Students! Let's plan for your vacation.%n");
 		//weather
 		String [] tw = new String[13];
 		Arrays.fill(tw,"");
-		System.out.printf("%nWhat kind of weather do you prefer? Enter \"hot\",\"warm\", \"cool\", or \"nevermind\"%n");
-		System.out.println("Feeling lucky? Press Enter");
-		String weather = "";
-		tw = weather(weather,tw);
+		System.out.printf("%nWhat kind of weather do you like? %n");
+		System.out.printf("Feeling lucky? Press Enter%n");
+		System.out.printf("Hot, Warm, Cool, or Nevermind?%n(H/W/C/N)? ");
+		tw = weather(cityname);
 
 		//location
 		String [] tl = new String[13];
 		Arrays.fill(tl,"");
 
-		System.out.printf("%nHow far do you prefer? Enter \"domestic \", \"international\", or \"nevermind\"%n");
+		System.out.printf("%nHow far do you prefer? %nDomestic, Internation, or Nevermind?%n(D/I/N)?");
 		String location = "";
-		tl = location(tl,location);
+		tl = location(cityname,tl);
 
 		//activities
 
@@ -33,7 +35,7 @@ public class H1 {
 
 		System.out.printf("%nWhat's your third most concerned element%n");
 		int a3 = TextIO.getlnInt();
-		String []ascore = activities(a1,a2,a3);
+		String []ascore = activities(a1,a2,a3,cityname);
 
 		//suggestions for cities
 		String []tours = new String[13];
@@ -63,79 +65,52 @@ for(int n4 = 0; n4 < 13; n4++)
 {System.out.print(tours[n4]+"  ");}
 }}
 
-else {System.out.printf("%nSorry, you don't have any choice.");}
+else {System.out.printf("%nSorry, we don't have any suggestion for you. Thank you for using our program.");System.exit(0);}
 
 vacationsuggestion();
-
-
-
 
 }
 ////////////////////////////////////////////////
 //(weather)
-public static String [] weather(String weather, String[]tours)
-{weather = TextIO.getlnString();
+public static String [] weather(String[] cityname)
+{ 
+	String [] tours = new String[13];
+	String weather = TextIO.getlnString();
 	weather = weather.toLowerCase();
-	String nyc = "New York City";
-	String h = "Hawaii";
-	String r = "Rome";
-	String c = "Cancun";
-	String o = "Orlando";
-	String l = "London";
-	String m = "Miami";
-	String lv = "Las Vegas";
-	String sf = "San Francisco";
-	String la = "Los Angeles";
-	String mb = "Myrtle Beach";
-	String pr = "Puerto Rico";
-	String p = "Paris";
+	
 	switch (weather)
-	{case "warm" :tours[0]=nyc;tours[1]=lv; tours[2]=sf;tours[3]=la;tours[4]=mb;break;
-	case "hot": tours[0]=h;tours[1]=c; tours[2]=o;tours[3]=m;tours[4]=pr;break;
-	case "cool": tours[0]=r;tours[1]=l; tours[2]=p;break;
-	case "nevermind": tours[0]=nyc;tours[1]=lv; tours[2]=sf;tours[3]=la;tours[4]=mb;
-	tours[5]=h;tours[6]=c; tours[7]=o;tours[8]=m;tours[9]=pr;
-	tours[10]=r;tours[11]=l; tours[12]=p;break;
-	case "":tours[0]=nyc;tours[1]=lv; tours[2]=sf;tours[3]=la;tours[4]=mb;
-	tours[5]=h;tours[6]=c; tours[7]=o;tours[8]=m;tours[9]=pr;
-	tours[10]=r;tours[11]=l; tours[12]=p;
+	{case "w" :tours[0]=cityname[0];tours[1]=cityname[7]; tours[2]=cityname[8];tours[3]=cityname[9];tours[4]=cityname[10];break;
+	case "h": tours[0]=cityname[1];tours[1]=cityname[3]; tours[2]=cityname[4];tours[3]=cityname[6];tours[4]=cityname[11];break;
+	case "c": tours[0]=cityname[2];tours[1]=cityname[5]; tours[2]=cityname[12];break;
+	case "n": tours = cityname;break;
+	case "": tours = cityname;
+	
 	Random x = new Random();
 	int a = x.nextInt(12);
 	System.out.println(tours[a]);
-	System.exit(0);break;
-	default: System.out.println("Sorry, I cannot understand. Please enter again.");weather(weather,tours);
+	vacationsuggestion();break;
+	
+	default: System.out.println("Sorry, I cannot understand. Please enter again.");weather(cityname);
 
 }
 return tours;
 }
 
 //(location) method
-public static String [] location(String []tl, String location){
-	location = TextIO.getlnString();
+public static String [] location(String[] cityname, String[] tl){
+	String location = TextIO.getlnString();
 	location = location.toLowerCase();
-	String nyc = "New York City";
-	String h = "Hawaii";
-	String r = "Rome";
-	String c = "Cancun";
-	String o = "Orlando";
-	String l = "London";
-	String m = "Miami";
-	String lv = "Las Vegas";
-	String sf = "San Francisco";
-	String la = "Los Angeles";
-	String mb = "Myrtle Beach";
-	String pr = "Puerto Rico";
-	String p = "Paris";
+	
 	switch (location)
-	{case "domestic" :tl[0]=nyc;tl[1]=h;tl[2]=o;tl[3]=m;tl[4]=lv;tl[5]=sf;tl[6]=la;tl[7]=mb;break;
-	case "international": tl[0]=r;tl[1]=c; tl[2]=l;tl[3]=pr;tl[4]=p;break;
-	case "nevermind":tl[0]=nyc;tl[1]=h;tl[2]=o;tl[3]=m;tl[4]=lv;tl[5]=sf;tl[6]=la;tl[7]=mb;tl[8]=r;tl[9]=c; tl[10]=l;tl[11]=pr;tl[12]=p;break;
-	default: System.out.println("Sorry, I cannot understand.Please enter again.");location(tl,location);
+	{case "d" :tl[0]=cityname[0];tl[1]=cityname[1];tl[2]=cityname[4];tl[3]=cityname[6];tl[4]=cityname[7];tl[5]=cityname[8];tl[6]=cityname[9];tl[7]=cityname[10];break;
+	case "i": tl[0]=cityname[2];tl[1]=cityname[3]; tl[2]=cityname[5];tl[3]=cityname[11];tl[4]=cityname[12];break;
+	case "n": tl = cityname ;break;
+	default: System.out.println("Sorry, I cannot understand.Please enter again.");location(cityname,tl);
 }
 return tl;
 }
 //(activities)activities array score
-public static String []activities(int a1,int a2,int a3)
+public static String []activities(int a1,int a2,int a3, String[] cityname)
 {
 
 	//(activities)score for each city's activities: beach, museums and historical sites, city life, nature, amusement park
@@ -153,20 +128,6 @@ public static String []activities(int a1,int a2,int a3)
 	double []apr = {10,3,0,10,7};
 	double []ap = {0,10,10,7,0};
 
-	String nyc = "New York City";
-	String h = "Hawaii";
-	String r = "Rome";
-	String c = "Cancun";
-	String o = "Orlando";
-	String l = "London";
-	String m = "Miami";
-	String lv = "Las Vegas";
-	String sf = "San Francisco";
-	String la = "Los Angeles";
-	String mb = "Myrtle Beach";
-	String pr = "Puerto Rico";
-	String p = "Paris";
-
 	double snyc = ascore(anyc,a1,a2,a3);
 	double sh = ascore(ah,a1,a2,a3);
 	double sr = ascore(ar,a1,a2,a3);
@@ -182,34 +143,34 @@ public static String []activities(int a1,int a2,int a3)
 	double sp = ascore(ap,a1,a2,a3);
 
 	String []afit = new String[13];
-	afit = afit(afit,snyc,0,nyc);
-	afit = afit(afit,sh,1,h);
-	afit = afit(afit,sr,2,r);
-	afit = afit(afit,sc,3,c);
-	afit = afit(afit,so,4,o);
-	afit = afit(afit,sl,5,l);
-	afit = afit(afit,sm,6,m);
-	afit = afit(afit,slv,7,lv);
-	afit = afit(afit,ssf,8,sf);
-	afit = afit(afit,sla,9,la);
-	afit = afit(afit,smb,10,mb);
-	afit = afit(afit,spr,11,pr);
-	afit = afit(afit,sp,12,p);
+	afit = afit(afit,snyc,0,cityname[0],cityname);
+	afit = afit(afit,sh,1,cityname[1],cityname);
+	afit = afit(afit,sr,2,cityname[2],cityname);
+	afit = afit(afit,sc,3,cityname[3],cityname);
+	afit = afit(afit,so,4,cityname[4],cityname);
+	afit = afit(afit,sl,5,cityname[5],cityname);
+	afit = afit(afit,sm,6,cityname[6],cityname);
+	afit = afit(afit,slv,7,cityname[7],cityname);
+	afit = afit(afit,ssf,8,cityname[8],cityname);
+	afit = afit(afit,sla,9,cityname[9],cityname);
+	afit = afit(afit,smb,10,cityname[10],cityname);
+	afit = afit(afit,spr,11,cityname[11],cityname);
+	afit = afit(afit,sp,12,cityname[12],cityname);
 
 	return afit;
 }
 
 // (activities)calculate activity score
-public static double ascore(double[]cityname, int a1,int a2, int a3)
+public static double ascore(double[]rawscore, int a1,int a2, int a3)
 {
-	double activityscore=cityname[a1]*0.5+cityname[a2]*0.3+cityname[a3]*0.2;
+	double activityscore=rawscore[a1]*0.5+rawscore[a2]*0.3+rawscore[a3]*0.2;
 	return activityscore;
 }
 
 //(activities)when the city's score is higher than 7, print out the city's name
-public static String[] afit(String[] afit,double score, int num, String city)
+public static String[] afit(String[] afit,double score, int num, String names, String[] cityname)
 {
-	if (score>=7) {afit[num]=city;}
+	if (score>=7) { afit [num] = cityname [num];}
 	else {afit[num]="";}
 	return afit;
 }
@@ -218,16 +179,12 @@ public static String[] afit(String[] afit,double score, int num, String city)
 public static void vacationsuggestion()
 {
 	System.out.println();
-	System.out.printf("%nYou may enter your favorite vacation spot suggestion to learn more about it. Enter a city's name or enter \"leave\" to end the program.%n");
+	System.out.printf("%nWant to know more about the city? Enter a city's name or press any key to end the program.%n");
 	String favoriteVacation = TextIO.getlnString();
 	favoriteVacation = favoriteVacation.toLowerCase();
 	System.out.println();
 
 	switch(favoriteVacation) {
-		case "leave":
-		System.out.println("Thanks for using our program.");
-		break;
-
 		case "new york city":
 		System.out.printf("You’ve chosen NYC! %nNew York City is a city of lights. Some attractive places to visit are Times Square, the Met, and its Broadway shows, which people from all over the world come and watch. If you come during the New Year you can watch the famous ball drop at Times Square. There are a lot of great food places along the way. And nightlife is abundant in NYC, where clubs and parties happen almost every week. There’s always something to visit in the day and something to do at night. ");
 		break;
@@ -280,11 +237,11 @@ public static void vacationsuggestion()
 		System.out.printf("You’ve chosen Paris! %nParis is a city of romance and fashion. Feel free to walk along the streets and see vendors that sell high quality and chic products such as purses and clothes. Along with clothes, Paris also emphasizes on art. It’s beautiful buildings such as the Eiffel Tower and its painting from the past are sights to see. The culture of Paris is also something to experience and appreciate. Overall, a very sophisticated and exciting place to see! ");
 		break;
 
-		default: System.out.printf("Your input is not one of the vacation options. Please enter another city's name.");vacationsuggestion();
+		default: System.out.println("Thank you for using our program."); 
 
 	}
-
 	System.out.println();
+	System.exit(0);
 
 }
 }
