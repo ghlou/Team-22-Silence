@@ -292,4 +292,7 @@ public static void vacationsuggestion()
   System.exit(0);
 
 }
+/** Works Cited
+Travel Channel. “Travel Channel Announces Top Vacation Spots.” Travel Channel, Travel Channel, 19 Dec. 2017,
+www.travelchannel.com/interests/travel-tips/photos/top-10-vacation-spots.*/
 }

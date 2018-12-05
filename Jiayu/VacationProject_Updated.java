@@ -5,13 +5,13 @@ public class VacationProject_Updated {
 
   String []cityname = {"New York City","Hawaii","Rome","Cancun","Orlando","London","Miami","Las Vegas","San Francisco","Los Angeles","Myrtle Beach","Puerto Rico","Paris"};
 
-  //javac -cp ".:SimpleTTS.jar" H1_update.java
-  //java -cp ".:SimpleTTS.jar" H1_
-  //SimpleTTS.say("Hi, Brandeis Students! Let's plan for your vacation.");
+  //javac -cp ".:SimpleTTS.jar" VacationProject_Updated.java
+  //java -cp ".:SimpleTTS.jar" VacationProject_Updated
+  SimpleTTS.say("Hi, Brandeis Students! Let's plan for your vacation.");
 
   //Declare a string array and initiate the cities'names.
   System.out.println("Hi, Brandeis Students! Let's plan for your vacation.");
- 
+
   //prompt user for weather preference and input answer into an array
   String [] tw = new String[13];
   Arrays.fill(tw,"");
@@ -28,7 +28,7 @@ public class VacationProject_Updated {
   String location = "";
   tl = location(cityname,tl);
 
-  //prompt user for activities preference with integers and input answer into an array. If the input is not between 0-4, a while loop is used to continue prompting the user.  
+  //prompt user for activities preference with integers and input answer into an array. If the input is not between 0-4, a while loop is used to continue prompting the user.
   System.out.printf("%nChoose three of the most concerned elements.");
   System.out.printf("%nEnter 0 for \"beach\"%nEnter 1 for \"museums and historical sites\"%nEnter 2 for \"city life\"%nEnter 3 for \"nature\"%nEnter 4 for \"amusement park\"%n");
 
@@ -52,13 +52,13 @@ public class VacationProject_Updated {
    System.out.println("Please enter a number between 0-4.");
    a3 = TextIO.getlnInt();
   }
-  
-  
+
+
   String []ta = activities(a1,a2,a3,cityname);
 
-  /* Collect data from the three arrays (weather, location, activities), and use for loops to match the preferences. 
+  /* Collect data from the three arrays (weather, location, activities), and use for loops to match the preferences.
 If preferences match, then the program will place the location name in a new array.*/
-  
+
   String []tours = new String[13];
   Arrays.fill(tours,"");
   int count = 0;
@@ -227,7 +227,7 @@ public static void vacationsuggestion()
 
   case "cancun":
   System.out.printf("You’ve chosen Cancun! %nCancun is the heart of rest. It is where you can set a towel down on the beach and lie on your stomach to get a tan. The weather is perfect for sitting outside under the sun and enjoy yourself and your family or friends. If you get bored of lying on the beach, Cancun has some easy adventure activities like swimming at the beach or snorkeling in the reefs.");
-  SimpleTTS.say("You’ve chosen Cancun! %nCancun is the heart of rest. It is where you can set a towel down on the beach and lie on your stomach to get a tan. The weather is perfect for sitting outside under the sun and enjoy yourself and your family or friends. If you get bored of lying on the beach, Cancun has some easy adventure activities like swimming at the beach or snorkeling in the reefs.");  
+  SimpleTTS.say("You’ve chosen Cancun! %nCancun is the heart of rest. It is where you can set a towel down on the beach and lie on your stomach to get a tan. The weather is perfect for sitting outside under the sun and enjoy yourself and your family or friends. If you get bored of lying on the beach, Cancun has some easy adventure activities like swimming at the beach or snorkeling in the reefs.");
   break;
 
   case "orlando":
