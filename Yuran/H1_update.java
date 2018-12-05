@@ -4,13 +4,13 @@ public class H1_update {
 	public static void main (String[] args) {
 
 		String []cityname = {"New York City","Hawaii","Rome","Cancun","Orlando","London","Miami","Las Vegas","San Francisco","Los Angeles","Myrtle Beach","Puerto Rico","Paris"};
-
+		
 		//javac -cp ".:SimpleTTS.jar" H1_update.java
 		//java -cp ".:SimpleTTS.jar" H1_
 		//SimpleTTS.say("Hi, Brandeis Students! Let's plan for your vacation.");
 		//weather
 		System.out.println("Hi, Brandeis Students! Let's plan for your vacation.");
-		String [] tw = new String[13];
+		String [] tw = new String[Untitled.totalnum];
 		Arrays.fill(tw,"");
 		System.out.printf("%nWhat kind of weather do you like? %n");
 		System.out.printf("Feeling lucky? Press Enter%n");

@@ -1,5 +1,7 @@
-  import java.util.Arrays;
+import java.util.Arrays;
 import java.util.Random;
+import java.awt.*;
+
 public class VacationProject {
  public static void main (String[] args) {
 
@@ -7,13 +9,13 @@ public class VacationProject {
 
   //javac -cp ".:SimpleTTS.jar" VacationSuggestion.java
   //java -cp ".:SimpleTTS.jar" VacationSuggestion
-  SimpleTTS.say("Hi, Brandeis Students! Let's plan for your vacation.");
+  //SimpleTTS.say("Hi, Brandeis Students! Let's plan for your vacation.");
 
   //Declare a string array and initiate the cities'names.
   System.out.println("Hi, Brandeis Students! Let's plan for your vacation.");
  
   //prompt user for weather preference and input answer into an array
-  String [] tw = new String[13];
+  String [] tw = new String[Untitled.totalnum];
   Arrays.fill(tw,"");
   System.out.printf("%nWhat kind of weather do you like? %n");
   System.out.printf("Feeling lucky? Press Enter%n");
@@ -59,15 +61,15 @@ public class VacationProject {
   /* Collect data from the three arrays (weather, location, activities), and use for loops to match the preferences. 
 If preferences match, then the program will place the location name in a new array.*/
   
-  String []tours = new String[13];
+  String []tours = new String[13]; //initialize new array for the cities that match
   Arrays.fill(tours,"");
   int count = 0;
   for(int n1 = 0; n1 < 13; n1++){
    for (int n2 = 0; n2 < 13; n2++){
     for (int n3 = 0; n3 < 13; n3++){
      {if (tl[n1] == tw[n2] && tl[n1] == ta[n3] && tl[n1] != "")
-     {tours[n1] = tl[n1]; count++;}; //initialize new array for the cities that match
-    }
+     {tours[n1] = tl[n1]; count++;}; //Add the city to the array for print out
+        }
    }
   }
  }
@@ -95,7 +97,8 @@ vacationsuggestion();
 
 }
 ////////////////////////////////////////////////
-//(weather)
+/*Method [weather] Select the city based on users' choice on the city
+Hot warm cool or nvermind*/
 public static String [] weather(String[] cityname)
 {
  String [] tours = new String[13];
@@ -108,7 +111,8 @@ public static String [] weather(String[] cityname)
  case "c": tours[0]=cityname[2];tours[1]=cityname[5]; tours[2]=cityname[12];break;
  case "n": tours = cityname;break;
  case "": tours = cityname;
-
+/* This part of the program will randomly give user a suggestion
+    Feeling lucky*/
  Random x = new Random();
  int a = x.nextInt(12);
  System.out.println(tours[a]);
@@ -119,8 +123,9 @@ public static String [] weather(String[] cityname)
 }
 return tours;
 }
-
-//(location) method
+////////////////////////////////////////////////
+/* Method [location] Select the city based on users' choice on the city
+Domestic, international, and nevermind*/
 public static String [] location(String[] cityname, String[] tl){
  String location = TextIO.getlnString();
  location = location.toLowerCase();
@@ -133,11 +138,14 @@ public static String [] location(String[] cityname, String[] tl){
 }
 return tl;
 }
-//(activities)activities array score
+
+//Method [activity] calculate the score for each city based on users' taste
+
 public static String []activities(int a1,int a2,int a3, String[] cityname)
 {
-
- //(activities)score for each city's activities: beach, museums and historical sites, city life, nature, amusement park
+  
+//We rank the city based on the tourist attractions in the city
+//(activities)score for each city's activities: beach, museums and historical sites, city life, nature, amusement park
  double []anyc = {0,7,10,3,7};
  double []ah = {10,3,3,7,7};
  double []ar = {7,10,5,5,3};
@@ -184,7 +192,9 @@ public static String []activities(int a1,int a2,int a3, String[] cityname)
  return afit;
 }
 
-// (activities)calculate activity score
+/* (activities)calculate activity score based on users' Choice
+ First:50% Second:30% Third 20% */
+
 public static double ascore(double[]rawscore, int a1,int a2, int a3)
 {
  double activityscore=rawscore[a1]*0.5+rawscore[a2]*0.3+rawscore[a3]*0.2;
