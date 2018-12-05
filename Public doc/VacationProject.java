@@ -7,9 +7,9 @@ public class VacationProject {
 
     String []cityname = {"New York City","Hawaii","Rome","Cancun","Orlando","London","Miami","Las Vegas","San Francisco","Los Angeles","Myrtle Beach","Puerto Rico","Paris"};
 
-    //javac -cp ".:SimpleTTS.jar" VacationSuggestion.java
-    //java -cp ".:SimpleTTS.jar" VacationSuggestion
-    //SimpleTTS.say("Hi, Brandeis Students! Let's plan for your vacation.");
+    //javac -cp ".:SimpleTTS.jar" VacationProject.java
+    //java -cp ".:SimpleTTS.jar" VacationProject
+    SimpleTTS.say("Hi, Brandeis Students! Let's plan for your vacation.");
 
     //Declare a string array and initiate the cities'names.
     System.out.println("Hi, Brandeis Students! Let's plan for your vacation.");
