@@ -15,7 +15,7 @@ public class VacationProject {
     System.out.println("Hi, Brandeis Students! Let's plan for your vacation.");
 
     //prompt user for weather preference and input answer into an array
-    String [] tw = new String[Static.totalnum];
+    String [] tw = new String[StaticMethod.totalnum];
     Arrays.fill(tw,"");
     System.out.printf("%nWhat kind of weather do you like? %n");
     System.out.printf("Feeling lucky? Press Enter%n");
@@ -23,7 +23,7 @@ public class VacationProject {
     tw = weather(cityname);
 
     //prompt user for location preference and input answer into an array
-    String [] tl = new String[13];
+    String [] tl = new String[StaticMethod.totalnum];
     Arrays.fill(tl,"");
 
     System.out.printf("%nHow far do you prefer? %nDomestic, Internation, or Nevermind?%n(D/I/N)?");
@@ -65,12 +65,12 @@ public class VacationProject {
     *If preferences match, then the program will place the location name in a new array.
     */
 
-    String []tours = new String[13]; //initialize new array for the cities that match
+    String []tours = new String[StaticMethod.totalnum]; //initialize new array for the cities that match
     Arrays.fill(tours,"");
     int count = 0;
-    for(int n1 = 0; n1 < 13; n1++){
-      for (int n2 = 0; n2 < 13; n2++){
-        for (int n3 = 0; n3 < 13; n3++){
+    for(int n1 = 0; n1 < StaticMethod.totalnum; n1++){
+      for (int n2 = 0; n2 < StaticMethod.totalnum; n2++){
+        for (int n3 = 0; n3 < StaticMethod.totalnum; n3++){
           {if (tl[n1] == tw[n2] && tl[n1] == ta[n3] && tl[n1] != "")
           {tours[n1] = tl[n1]; count++;}; //Add the city to the array for print out
         }
@@ -83,14 +83,14 @@ public class VacationProject {
   */
   if (count != 0 && count!= 1)
   {System.out.printf("%nWe have some suggestions to you:%n");
-  for(int n4 = 0; n4 < 13; n4++)
+  for(int n4 = 0; n4 < StaticMethod.totalnum; n4++)
   {if (tours[n4] != "")
   {System.out.print(tours[n4] + "  ");}
 }}
 
 else if (count == 1)
 {System.out.printf("%nWe have a suggestion to you:%n");
-for(int n4 = 0; n4 < 13; n4++)
+for(int n4 = 0; n4 < StaticMethod.totalnum; n4++)
 {if (tours[n4] != "")
 {System.out.print(tours[n4]+"  ");}
 }}
@@ -106,7 +106,7 @@ vacationsuggestion();
 */
 public static String [] weather(String[] cityname)
 {
-  String [] tours = new String[13];
+  String [] tours = new String[StaticMethod.totalnum];
   String weather = TextIO.getlnString();
   weather = weather.toLowerCase();
 
@@ -186,7 +186,7 @@ public static String []activities(int a1,int a2,int a3, String[] cityname)
 
   //put the city with score more than seven into the array afit
   //wait to compare with other filter from the program.
-  String []afit = new String[13];
+  String []afit = new String[StaticMethod.totalnum];
   afit = afit(afit,snyc,0,cityname[0],cityname);
   afit = afit(afit,sh,1,cityname[1],cityname);
   afit = afit(afit,sr,2,cityname[2],cityname);
