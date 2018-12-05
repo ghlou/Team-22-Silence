@@ -15,7 +15,7 @@ public class VacationProject {
   System.out.println("Hi, Brandeis Students! Let's plan for your vacation.");
 
   //prompt user for weather preference and input answer into an array
-  String [] tw = new String[Untitled.totalnum];
+  String [] tw = new String[Static.totalnum];
   Arrays.fill(tw,"");
   System.out.printf("%nWhat kind of weather do you like? %n");
   System.out.printf("Feeling lucky? Press Enter%n");
