@@ -13,7 +13,7 @@ public class VacationProject {
 
   //Declare a string array and initiate the cities'names.
   System.out.println("Hi, Brandeis Students! Let's plan for your vacation.");
- 
+
   //prompt user for weather preference and input answer into an array
   String [] tw = new String[Untitled.totalnum];
   Arrays.fill(tw,"");
@@ -30,7 +30,9 @@ public class VacationProject {
   String location = "";
   tl = location(cityname,tl);
 
-  //prompt user for activities preference with integers and input answer into an array. If the input is not between 0-4, a while loop is used to continue prompting the user.  
+  /*prompt user for activities preference with integers and input answer into an array.
+   *If the input is not between 0-4, a while loop is used to continue prompting the user.
+   */
   System.out.printf("%nChoose three of the most concerned elements.");
   System.out.printf("%nEnter 0 for \"beach\"%nEnter 1 for \"museums and historical sites\"%nEnter 2 for \"city life\"%nEnter 3 for \"nature\"%nEnter 4 for \"amusement park\"%n");
 
@@ -54,13 +56,15 @@ public class VacationProject {
    System.out.println("Please enter a number between 0-4.");
    a3 = TextIO.getlnInt();
   }
-  
-  
+
+
   String []ta = activities(a1,a2,a3,cityname);
 
-  /* Collect data from the three arrays (weather, location, activities), and use for loops to match the preferences. 
-If preferences match, then the program will place the location name in a new array.*/
-  
+/* Collect data from the three arrays (weather, location, activities), and
+*use for loops to match the preferences.
+*If preferences match, then the program will place the location name in a new array.
+*/
+
   String []tours = new String[13]; //initialize new array for the cities that match
   Arrays.fill(tours,"");
   int count = 0;
@@ -96,9 +100,10 @@ else {System.out.printf("%nSorry, we don't have any suggestion for you. Thank yo
 vacationsuggestion();
 
 }
-////////////////////////////////////////////////
+
 /*Method [weather] Select the city based on users' choice on the city
-Hot warm cool or nvermind*/
+*Hot warm cool or nvermind
+*/
 public static String [] weather(String[] cityname)
 {
  String [] tours = new String[13];
@@ -112,7 +117,8 @@ public static String [] weather(String[] cityname)
  case "n": tours = cityname;break;
  case "": tours = cityname;
 /* This part of the program will randomly give user a suggestion
-    Feeling lucky*/
+*Feeling lucky
+*/
  Random x = new Random();
  int a = x.nextInt(12);
  System.out.println(tours[a]);
@@ -123,9 +129,9 @@ public static String [] weather(String[] cityname)
 }
 return tours;
 }
-////////////////////////////////////////////////
+
 /* Method [location] Select the city based on users' choice on the city
-Domestic, international, and nevermind*/
+*Domestic, international, and nevermind*/
 public static String [] location(String[] cityname, String[] tl){
  String location = TextIO.getlnString();
  location = location.toLowerCase();
@@ -143,9 +149,10 @@ return tl;
 
 public static String []activities(int a1,int a2,int a3, String[] cityname)
 {
-  
-//We rank the city based on the tourist attractions in the city
-//(activities)score for each city's activities: beach, museums and historical sites, city life, nature, amusement park
+
+/*We rank the city based on the tourist attractions in the city
+*[activities]score for each city's activities: beach, museums and historical sites,
+*city life, nature, amusement park*/
  double []anyc = {0,7,10,3,7};
  double []ah = {10,3,3,7,7};
  double []ar = {7,10,5,5,3};
@@ -160,6 +167,8 @@ public static String []activities(int a1,int a2,int a3, String[] cityname)
  double []apr = {10,3,0,10,7};
  double []ap = {0,10,10,7,0};
 
+
+//This part uses ascore method to calculate the score for each city.
  double snyc = ascore(anyc,a1,a2,a3);
  double sh = ascore(ah,a1,a2,a3);
  double sr = ascore(ar,a1,a2,a3);
@@ -174,6 +183,9 @@ public static String []activities(int a1,int a2,int a3, String[] cityname)
  double spr = ascore(apr,a1,a2,a3);
  double sp = ascore(ap,a1,a2,a3);
 
+
+//put the city with score more than seven into the array afit
+//wait to compare with other filter from the program.
  String []afit = new String[13];
  afit = afit(afit,snyc,0,cityname[0],cityname);
  afit = afit(afit,sh,1,cityname[1],cityname);
@@ -192,7 +204,7 @@ public static String []activities(int a1,int a2,int a3, String[] cityname)
  return afit;
 }
 
-/* (activities)calculate activity score based on users' Choice
+/* [activities]calculate activity score based on users' Choice
  First:50% Second:30% Third 20% */
 
 public static double ascore(double[]rawscore, int a1,int a2, int a3)
@@ -202,7 +214,7 @@ public static double ascore(double[]rawscore, int a1,int a2, int a3)
  return activityscore;
 }
 
-//(activities)when the city's score is higher than 7, print out the city's name
+//(activities)when the city's score is higher than 7, put it into array [afit]
 public static String[] afit(String[] afit,double score, int num, String names, String[] cityname)
 {
  if (score>=7) { afit [num] = cityname [num];}
@@ -211,6 +223,7 @@ public static String[] afit(String[] afit,double score, int num, String names, S
 }
 
 //pick a vacation spot for more information
+//print out more info of the city if user is interested.
 public static void vacationsuggestion()
 {
  System.out.println();
