@@ -101,7 +101,7 @@ for(int n4 = 0; n4 < StaticMethod.totalnum; n4++)
 {System.out.print(tours[n4]+"  ");}
 }}
 
-else {System.out.printf("%nSorry, we don't have any suggestion for you. Thank you for using our program.%n");System.exit(0);}
+else {System.out.printf("%nSorry, we don't have any suggestion for you. Thank you for using our program.");System.exit(0);}
 
 vacationsuggestion();
 
