@@ -1,3 +1,6 @@
+/*
+ *Please Read the README file.
+ */
 import java.util.Arrays;
 import java.util.Random;
 import java.awt.*;
@@ -7,8 +10,11 @@ public class VacationProject {
 
     String []cityname = {"New York City","Hawaii","Rome","Cancun","Orlando","London","Miami","Las Vegas","San Francisco","Los Angeles","Myrtle Beach","Puerto Rico","Paris"};
 
-    //javac -cp ".:SimpleTTS.jar" VacationProject.java
-    //java -cp ".:SimpleTTS.jar" VacationProject
+/*Compile command:
+ *   javac -cp ".:SimpleTTS.jar" VacationProject.java 
+ *Run command: 
+ *   java -cp ".:SimpleTTS.jar" VacationProject
+*/
     SimpleTTS.say("Hi, Brandeis Students! Let's plan for your vacation.");
 
     //Declare a string array and initiate the cities'names.
@@ -285,7 +291,7 @@ public static void vacationsuggestion()
     System.out.printf("You’ve chosen Paris! %nParis is a city of romance and fashion. Feel free to walk along the streets and see vendors that sell high quality and chic products such as purses and clothes. Along with clothes, Paris also emphasizes on art. It’s beautiful buildings such as the Eiffel Tower and its painting from the past are sights to see. The culture of Paris is also something to experience and appreciate. Overall, a very sophisticated and exciting place to see! ");
     break;
 
-    default: System.out.println("Thank you for using our program.");
+    default: System.out.printf("Thank you for using our program.%n");
 
   }
   System.out.println();
